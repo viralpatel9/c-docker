@@ -17,7 +17,6 @@ jobs:
           git fetch --tags
           git describe --always > githash
           set /p myvar= < githash 
-          del githash
           echo "version=$myvar" >> $env:GITHUB_ENV
       
       - name: Build image
