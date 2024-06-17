@@ -14,6 +14,7 @@ jobs:
       
       - name: Get version from the latest tag
         run: |
+          git fetch --tags
           git describe > githash
           set /p myvar= < githash 
           del githash
