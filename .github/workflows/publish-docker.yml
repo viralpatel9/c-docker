@@ -15,6 +15,7 @@ jobs:
       - name: Get version from the latest tag
         run: |
           echo "version=$(git rev-parse --abbrev-ref HEAD)" >> $env:GITHUB_ENV
+        shell: pwsh
       
       - name: Build image
         run: |
