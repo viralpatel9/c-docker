@@ -14,7 +14,7 @@ jobs:
       
       - name: Get version from the latest tag
         run: |
-          $version=(git describe)
+          git describe >> version
           echo "version=$version" >> $env:GITHUB_ENV
       
       - name: Build image
