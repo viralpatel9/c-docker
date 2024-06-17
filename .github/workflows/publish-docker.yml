@@ -15,7 +15,7 @@ jobs:
       - name: Get version from the latest tag
         run: |
           git fetch --tags
-          git describe > githash
+          git describe --always > githash
           set /p myvar= < githash 
           del githash
           echo "version=$myvar" >> $env:GITHUB_ENV
