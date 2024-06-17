@@ -14,10 +14,7 @@ jobs:
       
       - name: Get version from the latest tag
         run: |
-          git fetch --tags
-          git describe --always > githash
-          set /p myvar= < githash 
-          echo "version=$myvar" >> $env:GITHUB_ENV
+          echo "version=$(git rev-parse --abbrev-ref HEAD)" >> $env:GITHUB_ENV
       
       - name: Build image
         run: |
